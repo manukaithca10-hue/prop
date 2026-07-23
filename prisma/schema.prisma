@@ -1,0 +1,246 @@
+// Prisma Schema for KAITH PROPERTIES - Ultra Luxury Real Estate Platform
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  AGENT
+  ADMIN
+  SUPERADMIN
+}
+
+enum PropertyStatus {
+  FOR_SALE
+  FOR_RENT
+  PENDING
+  SOLD
+  RENTED
+}
+
+enum PropertyType {
+  LUXURY_VILLA
+  INDEPENDENT_HOUSE
+  PENTHOUSE
+  APARTMENT
+  COMMERCIAL_SHOP
+  OFFICE_SPACE
+  SHOWROOM
+  WAREHOUSE
+  FARM_HOUSE
+  PLOT
+}
+
+enum ProjectStatus {
+  UPCOMING
+  UNDER_CONSTRUCTION
+  COMPLETED
+}
+
+model User {
+  id            String         @id @default(cuid())
+  name          String
+  email         String         @unique
+  password      String
+  phone         String?
+  avatar        String?
+  role          Role           @default(USER)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  wishlists     Wishlist[]
+  appointments  Appointment[]
+  bookings      Booking[]
+  reviews       Review[]
+  messages      Message[]
+  notifications Notification[]
+  agentProfile  Agent?
+}
+
+model Agent {
+  id           String        @id @default(cuid())
+  userId       String        @unique
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title        String        // e.g. Senior Vice President of Luxury Sales
+  bio          String
+  experienceYrs Int           @default(10)
+  rating       Float         @default(4.9)
+  whatsapp     String?
+  languages    String[]
+  specialties  String[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  properties   Property[]
+  appointments Appointment[]
+}
+
+model Property {
+  id                 String         @id @default(cuid())
+  title              String
+  slug               String         @unique
+  description        String
+  price              Float
+  currency           String         @default("INR")
+  location           String
+  address            String
+  city               String
+  state              String
+  zipCode            String?
+  latitude           Float?
+  longitude          Float?
+  bedrooms           Int
+  bathrooms          Int
+  areaSqFt           Float
+  pricePerSqFt       Float?
+  propertyType       PropertyType
+  status             PropertyStatus @default(FOR_SALE)
+  yearBuilt          Int?
+  garageSpaces       Int            @default(2)
+  isFeatured         Boolean        @default(false)
+  isPremium          Boolean        @default(true)
+  isSold             Boolean        @default(false)
+  
+  images             String[]
+  videoUrl           String?
+  virtualTour360     String?
+  floorPlanUrl       String?
+
+  amenities          String[]       // Infinity Pool, Helipad, Wine Cellar, Private Dock, Private Elevator, Spa
+  facing             String?        // North, East, Sea-Facing, Park-Facing
+  
+  agentId            String
+  agent              Agent          @relation(fields: [agentId], references: [id])
+  projectId          String?
+  project            Project?       @relation(fields: [projectId], references: [id])
+
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+
+  wishlists          Wishlist[]
+  appointments       Appointment[]
+  reviews            Review[]
+}
+
+model Project {
+  id           String        @id @default(cuid())
+  name         String
+  slug         String        @unique
+  tagline      String
+  description  String
+  location     String
+  city         String
+  developer    String        @default("KAITH DEVELOPMENTS")
+  completion   DateTime?
+  status       ProjectStatus @default(UNDER_CONSTRUCTION)
+  coverImage   String
+  gallery      String[]
+  startingPrice Float
+  properties   Property[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Appointment {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id])
+  agentId    String
+  agent      Agent    @relation(fields: [agentId], references: [id])
+  date       DateTime
+  timeSlot   String
+  status     String   @default("PENDING") // PENDING, CONFIRMED, COMPLETED, CANCELLED
+  notes      String?
+  createdAt  DateTime @default(now())
+}
+
+model Booking {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  amount     Float
+  tokenFee   Float    @default(50000)
+  status     String   @default("PAID")
+  paymentId  String?
+  createdAt  DateTime @default(now())
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  rating     Int      @default(5)
+  comment    String
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id])
+  createdAt  DateTime @default(now())
+}
+
+model Testimonial {
+  id          String   @id @default(cuid())
+  clientName  String
+  designation String   // e.g. CEO, Tech Titan, Real Estate Investor
+  avatar      String
+  quote       String
+  rating      Int      @default(5)
+  location    String?
+  createdAt   DateTime @default(now())
+}
+
+model Blog {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  summary     String
+  content     String
+  coverImage  String
+  author      String   @default("Kaith Insights Team")
+  category    String   // Market Insights, Architecture, Investment, Lifestyle
+  readTime    String   @default("5 min read")
+  tags        String[]
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  status    String   @default("UNREAD")
+  createdAt DateTime @default(now())
+}
+
+model Wishlist {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+
+  @@unique([userId, propertyId])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
