@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-6">
             <Link href="/" className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full border border-gold-400/40 flex items-center justify-center bg-gold-400/10 shadow-gold-glow">
-                <span className="font-playfair font-bold text-xl text-gold-400">K</span>
+                <span className="font-playfair font-bold text-xl text-gold-400">MK</span>
               </div>
               <div>
                 <span className="font-playfair text-2xl font-bold tracking-wider text-white">
@@ -37,6 +37,11 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
+            <div>
+              <p className="font-poppins text-sm font-bold text-white">MANDEEP KAITH</p>
+              <p className="font-inter text-xs text-gold-400">Founder of KAITH PROPERTIES</p>
+              <p className="font-inter text-xs text-neutral-500 mt-1">Canada Return | Graduate | Entrepreneur</p>
+            </div>
             <p className="text-neutral-400 text-sm leading-relaxed max-w-md font-light">
               KAITH PROPERTIES is the premier international brokerage specializing in ultra-prime sky mansions, beachfront private estates, golf sanctuaries, and landmark commercial developments.
             </p>
@@ -132,11 +137,19 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500 font-light">
-          <p>© {new Date().getFullYear()} KAITH PROPERTIES. All Rights Reserved. Ultra Luxury Real Estate Portfolio.</p>
+          <div>
+            <p>© {new Date().getFullYear()} MANDEEP KAITH — KAITH PROPERTIES. All Rights Reserved.</p>
+            <p className="text-neutral-600 text-[10px] mt-0.5">Canada Return | Graduate | Real Estate Professional</p>
+          </div>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-gold-400 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-gold-400 transition-colors">Terms of Service</Link>
-            <Link href="/admin" className="hover:text-gold-400 transition-colors">Staff Portal</Link>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="flex items-center gap-1.5 hover:text-gold-400 transition-colors"
+            >
+              ↑ Back to Top
+            </button>
           </div>
         </div>
       </div>

@@ -46,6 +46,9 @@ const config: Config = {
         playfair:  ["Cormorant Garamond", "serif"],
         cormorant: ["Cormorant Garamond", "serif"],
         sans:      ["Outfit", "sans-serif"],
+        // Portfolio fonts
+        poppins:   ["Poppins", "sans-serif"],
+        inter:     ["Inter", "sans-serif"],
       },
       fontSize: {
         "2xs": ["0.65rem", { lineHeight: "1rem" }],
@@ -62,9 +65,14 @@ const config: Config = {
         "gold-shimmer":       "linear-gradient(90deg,transparent 0%,rgba(212,183,120,0.22) 50%,transparent 100%)",
       },
       animation: {
-        float:       "float 6s ease-in-out infinite",
-        "pulse-glow":"pulseGlow 3s infinite ease-in-out",
-        shimmer:     "shimmer 2.5s infinite",
+        float:            "float 6s ease-in-out infinite",
+        "pulse-glow":     "pulseGlow 3s infinite ease-in-out",
+        shimmer:          "shimmer 2.5s infinite",
+        "float-particle": "floatParticle 8s ease-in-out infinite",
+        "text-reveal":    "textReveal 1s cubic-bezier(0.16,1,0.3,1) forwards",
+        "fade-up":        "fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards",
+        "spin-slow":      "spin 12s linear infinite",
+        "glow-pulse":     "glowPulse 2s ease-in-out infinite",
       },
       keyframes: {
         float: {
@@ -77,6 +85,24 @@ const config: Config = {
         },
         shimmer: {
           "100%": { transform: "translateX(100%)" },
+        },
+        floatParticle: {
+          "0%":   { transform: "translateY(0px) translateX(0px)", opacity: "0" },
+          "20%":  { opacity: "1" },
+          "80%":  { opacity: "0.6" },
+          "100%": { transform: "translateY(-120px) translateX(30px)", opacity: "0" },
+        },
+        textReveal: {
+          "0%":   { transform: "translateY(100%)", opacity: "0" },
+          "100%": { transform: "translateY(0)",    opacity: "1" },
+        },
+        fadeUp: {
+          "0%":   { transform: "translateY(40px)", opacity: "0" },
+          "100%": { transform: "translateY(0)",    opacity: "1" },
+        },
+        glowPulse: {
+          "0%,100%": { boxShadow: "0 0 20px rgba(212,183,120,0.3)" },
+          "50%":     { boxShadow: "0 0 50px rgba(212,183,120,0.7)" },
         },
       },
     },
