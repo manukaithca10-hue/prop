@@ -40,6 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <meta name="google-site-verification" content="mv87UIU2jja1llLrXFzQhjTo9rActP8Hl8f7H9ElGoU" />
         <title>
           {isPortfolioHome
             ? "Mandeep Kaith | Canada Return | Founder of KAITH PROPERTIES"
@@ -54,7 +55,6 @@ export default function RootLayout({
           }
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="google-site-verification" content="mv87UIU2jja1llLrXFzQhjTo9rActP8Hl8f7H9ElGoU" />
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta
