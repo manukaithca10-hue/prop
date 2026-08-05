@@ -135,6 +135,40 @@ export default function Footer() {
 
         </div>
 
+        {/* Mandeep Kaith Popular Topics & SEO Guides Section */}
+        <div className="py-8 border-b border-white/5">
+          <p className="font-poppins text-xs font-bold uppercase tracking-widest text-gold-400 mb-4">
+            Mandeep Kaith — Popular Topics & Real Estate Guides
+          </p>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-neutral-400">
+            <Link href="/mandeep-kaith" className="hover:text-gold-400 transition-colors">About Mandeep Kaith</Link> •
+            <Link href="/mandeep-kaith-real-estate" className="hover:text-gold-400 transition-colors">Real Estate Expert</Link> •
+            <Link href="/mandeep-kaith-canada-return" className="hover:text-gold-400 transition-colors">Canada Return Journey</Link> •
+            <Link href="/mandeep-kaith-kaith-properties" className="hover:text-gold-400 transition-colors">KAITH PROPERTIES Founder</Link> •
+            <Link href="/mandeep-kaith-property-consultant" className="hover:text-gold-400 transition-colors">Property Consultant</Link> •
+            <Link href="/mandeep-kaith-investment-advisor" className="hover:text-gold-400 transition-colors">Investment Advisor</Link> •
+            <Link href="/mandeep-kaith-punjab" className="hover:text-gold-400 transition-colors">Punjab Real Estate</Link> •
+            <Link href="/mandeep-kaith-residential" className="hover:text-gold-400 transition-colors">Residential Homes</Link> •
+            <Link href="/mandeep-kaith-commercial" className="hover:text-gold-400 transition-colors">Commercial SCOs</Link> •
+            <Link href="/mandeep-kaith-luxury-properties" className="hover:text-gold-400 transition-colors">Luxury Mansions</Link> •
+            <Link href="/mandeep-kaith-testimonials" className="hover:text-gold-400 transition-colors">Testimonials</Link> •
+            <Link href="/mandeep-kaith-success-stories" className="hover:text-gold-400 transition-colors">Success Stories</Link> •
+            <Link href="/mandeep-kaith-services" className="hover:text-gold-400 transition-colors">Services</Link> •
+            <Link href="/mandeep-kaith-portfolio" className="hover:text-gold-400 transition-colors">Portfolio</Link> •
+            <Link href="/mandeep-kaith-entrepreneur" className="hover:text-gold-400 transition-colors">Entrepreneur Journey</Link> •
+            <Link href="/mandeep-kaith-vision" className="hover:text-gold-400 transition-colors">Vision & Mission</Link> •
+            <Link href="/mandeep-kaith-property-tips" className="hover:text-gold-400 transition-colors">Property Tips</Link> •
+            <Link href="/mandeep-kaith-awards" className="hover:text-gold-400 transition-colors">Awards</Link> •
+            <Link href="/mandeep-kaith-faq" className="hover:text-gold-400 transition-colors">FAQ</Link> •
+            <Link href="/mandeep-kaith-media" className="hover:text-gold-400 transition-colors">Media & Press</Link> •
+            <Link href="/mandeep-kaith-team" className="hover:text-gold-400 transition-colors">Team</Link> •
+            <Link href="/mandeep-kaith-process" className="hover:text-gold-400 transition-colors">6-Step Process</Link> •
+            <Link href="/mandeep-kaith-reviews" className="hover:text-gold-400 transition-colors">Reviews</Link> •
+            <Link href="/mandeep-kaith-contact" className="hover:text-gold-400 transition-colors">Contact</Link> •
+            <Link href="/mandeep-kaith-blog" className="hover:text-gold-400 transition-colors">Real Estate Blog</Link>
+          </div>
+        </div>
+
         {/* Footer Bottom */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500 font-light">
           <div>
