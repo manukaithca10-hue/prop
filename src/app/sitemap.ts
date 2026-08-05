@@ -6,9 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Set this env variable in Vercel dashboard → Settings → Environment Variables.
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL ||
-    (process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "https://prop-pink.vercel.app");
+    "https://prop-pink.vercel.app";
 
   const now = new Date();
 

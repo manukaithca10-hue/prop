@@ -4,9 +4,7 @@ import ClientLayout from './ClientLayout';
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://prop-pink.vercel.app");
+  "https://prop-pink.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
