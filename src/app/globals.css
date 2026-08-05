@@ -277,3 +277,165 @@ input[type="range"] {
     left: 16px;
   }
 }
+
+/* ── SEO Page Prose Styles ─────────────────────────────── */
+.prose-seo h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.prose-seo h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #D4AF37;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.prose-seo h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e5e5e5;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.prose-seo p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #a3a3a3;
+  margin-bottom: 1.25rem;
+}
+.prose-seo strong {
+  color: #D4AF37;
+  font-weight: 600;
+}
+.prose-seo ul {
+  list-style: none;
+  margin: 1.25rem 0;
+  padding: 0;
+}
+.prose-seo ul li {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #a3a3a3;
+  padding: 0.5rem 0 0.5rem 1.75rem;
+  position: relative;
+  line-height: 1.7;
+  border-bottom: 1px solid rgba(212,175,55,0.06);
+}
+.prose-seo ul li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: #D4AF37;
+  font-size: 0.5rem;
+  top: 0.85rem;
+}
+.prose-seo ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+.prose-seo ol li {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #a3a3a3;
+  padding: 0.4rem 0;
+  line-height: 1.7;
+}
+.prose-seo ol li::marker {
+  color: #D4AF37;
+  font-weight: 700;
+}
+.prose-seo blockquote {
+  border-left: 3px solid #D4AF37;
+  background: rgba(212,175,55,0.06);
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.prose-seo blockquote p {
+  color: #d4d4d4;
+  font-style: italic;
+  margin-bottom: 0;
+  font-size: 1.05rem;
+}
+.prose-seo .seo-section {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(212,175,55,0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2.5rem 0;
+}
+.prose-seo .seo-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+@media (min-width: 640px) {
+  .prose-seo .seo-stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.prose-seo .seo-stat {
+  background: rgba(212,175,55,0.06);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+.prose-seo .seo-stat .num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #D4AF37;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.prose-seo .seo-stat .label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: #737373;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.prose-seo .faq-item {
+  border: 1px solid rgba(212,175,55,0.12);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0.75rem;
+  background: rgba(255,255,255,0.02);
+}
+.prose-seo .faq-item .faq-q {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+.prose-seo .faq-item .faq-a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #a3a3a3;
+  line-height: 1.75;
+  margin: 0;
+}
+.prose-seo .keyword {
+  color: #D4AF37;
+  font-weight: 600;
+}
+.prose-seo hr {
+  border: none;
+  border-top: 1px solid rgba(212,175,55,0.15);
+  margin: 3rem 0;
+}
+
