@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "KAITH PROPERTIES | Ultra Luxury Real Estate Platform",
   description: "KAITH PROPERTIES - Premium real estate services with transparency, integrity, and customer satisfaction.",
   verification: {
-    google: 'mv87UIU2jja1llLrXFzQhjTo9rActP8Hl8f7H9ElGoU',
+    google: '1QA0EysSSgjtmieAuQZ_oAnUFdcwpADDiSxFKnXhrsU',
   },
   openGraph: {
     title: "KAITH PROPERTIES",
